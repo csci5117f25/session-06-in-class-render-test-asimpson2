@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+import db
 
 app = Flask(__name__)
+db.setup()
 
 @app.route('/')
 @app.route('/<name>')
@@ -10,4 +12,6 @@ def hello(name=None):
 @app.post("/submit")
 def submit():
     name = request.form.get("name")
-    text = request.form.get("text")
+    message = request.form.get("message")
+    db.add_content(name, message)
+    return render_template("hello.html", name=None, guestbook=db.get_guestbook())
