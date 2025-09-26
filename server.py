@@ -3,6 +3,7 @@ import db
 
 app = Flask(__name__)
 db.setup()
+print(db.get_guestbook())
 
 @app.route('/')
 @app.route('/<name>')
