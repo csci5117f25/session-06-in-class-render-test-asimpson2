@@ -25,10 +25,10 @@
     <button type="submit">Submit</button>
 </form>
 
-{% for message in messages %}
+{% for item in messages %}
 <div>
-    <h3>{{message.name}}</h3>
-    <div style="white-space-collapse: preserve;">{{message.messsage}}</div>
+    <h3>{{item.name}}</h3>
+    <div style="white-space-collapse: preserve;">{{item.messsage}}</div>
 </div>
 {% endfor %}
 </body>

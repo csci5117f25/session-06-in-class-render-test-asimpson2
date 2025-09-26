@@ -1,3 +1,3 @@
 CREATE TABLE guestbook (id SERIAL PRIMARY KEY,
-                        user TEXT,
+                        name TEXT,
                         message TEXT);
